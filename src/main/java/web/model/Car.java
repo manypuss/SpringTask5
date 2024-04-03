@@ -1,8 +1,5 @@
 package web.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Car {
     String brand;
     String model;
@@ -36,16 +33,6 @@ public class Car {
 
     public void setSeries(int series) {
         this.series = series;
-    }
-
-    public static List<Car> listCar() {
-        List<Car> cars = new ArrayList<>();
-        cars.add(new Car("LADA", "Zhiguli", 2101));
-        cars.add(new Car("LADA", "Samara", 2115));
-        cars.add(new Car("LADA", "110", 2110));
-        cars.add(new Car("LADA", "Priora", 2170));
-        cars.add(new Car("LADA", "Kalina", 117));
-        return cars;
     }
 
     @Override

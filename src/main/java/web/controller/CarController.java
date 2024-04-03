@@ -6,9 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import web.Service.CarService;
-import web.Service.CarServiceImpl;
-import web.model.Car;
+import web.service.CarService;
+import web.service.CarServiceImpl;
 
 @Controller
 @RequestMapping("/cars")
@@ -22,14 +21,14 @@ public class CarController {
 
     @GetMapping()
     public String showAllListCars(Model model) {
-        model.addAttribute("cars", carService.showAllListCars(Car.listCar()));
+        model.addAttribute("cars", carService.showAllListCars());
 
         return "allListCars";
     }
 
     @GetMapping(path = "", params = "count")
     public String showPartListCars(@RequestParam("count") int count, Model model) {
-        model.addAttribute("partCars", carService.showPartListCars(Car.listCar(), count));
+        model.addAttribute("partCars", carService.showPartListCars(count));
 
         return "partListCars";
     }
